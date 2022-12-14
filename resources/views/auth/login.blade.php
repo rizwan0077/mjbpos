@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-{{-- @section('content')
+@section('content')
     <div class="container-fluid p-0">
         <div class="row m-0">
           <div class="col-12 p-0">
@@ -14,9 +14,9 @@
                     <p>Enter your email & password to login</p>
                     <div class="form-group">
                       <label class="col-form-label">Email Address</label>
-                      <input class="form-control" type="email" name="personal_email" required="" placeholder="Test@gmail.com" value="{{ old('personal_email') }}">
+                      <input class="form-control" type="email" name="email" required="" placeholder="Test@gmail.com" value="{{ old('personal_email') }}">
                       <span>
-                        @error('personal_email')
+                        @error('email')
                             {{ $message }}
                         @enderror
                       </span>
@@ -50,8 +50,8 @@
           </div>
         </div>
     </div>
-@endsection --}}
-@section('content')
+@endsection
+{{-- @section('content')
 <main class="login-form">
   <div class="cotainer">
       <div class="row justify-content-center">
@@ -105,4 +105,4 @@
       </div>
   </div>
 </main>
-@endsection
+@endsection --}}

@@ -12,6 +12,13 @@ use App\Models\Business;
 
 class AuthController extends Controller
 {
+
+    public function __construct() {
+            // $this->middleware('guest')->except('logout');
+            //  $this->middleware('guest')->except('logout');
+            // $this->middleware('guest', ['except' => 'logout']);
+        }
+
     /**
      * Write code on Method
      *
@@ -100,7 +107,12 @@ class AuthController extends Controller
     public function dashboard()
     {
         if(Auth::check()){
-            return view('admin.dashboard');
+            if(Auth::user()->role_id == 1) {
+                return view('admin.dashboard');
+            } else {
+                return view('user.dashboard');
+            }
+            
         }
 
         return redirect("login")->withSuccess('Opps! You do not have access');
